@@ -19,10 +19,15 @@
 
   <!-- Custom styles for this template -->
   <link href="css/business-casual.css" rel="stylesheet">
-
+  <script src="backend.js"></script>
 </head>
 
 <body>
+<div id="loggedinNav">
+  <nav class="navbar navbar-expand-sm navbar-dark py-lg-4" id="lognav">
+
+  </nav>
+</div>
 
 <h1 class="site-heading text-center text-white d-none d-lg-block">
   <span class="site-heading-upper text-primary mb-3">Your new job is seconds away</span>
@@ -67,13 +72,18 @@
                 <span class="section-heading-lower">New Users</span>
               </h2>
               <div class="form-style-5">
-                <form id="newUser" action="/backend.js" class="test1">
-                  <input type="text" id="fname" placeholder="First Name" required>
-                  <input type="text" name="lname" placeholder="Last Name" required>
+                <form id="newUser" onsubmit="createUser()" class="test1">
+                  <input type="text" name="name" placeholder="Your full name" required>
                   <input type="text" name="phone" placeholder="Phone 1+(xxx)xxx-xxxx" required>
-                  <input type="text" name="email" placeholder="E-mail" required>
-                  <input type="text" name="password" placeholder="Password" required>
-                  <input type="text" name="passrepeat" placeholder="Re-type Password" required>
+                  <script type="text/javascript">
+                      document.getElementById('newUser').phone.addEventListener('input', function (e) {
+                          var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                          e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+                      });
+                  </script>
+                  <input type="email" name="email" placeholder="E-mail" required>
+                  <input type="password" name="password" placeholder="Password" required>
+                  <input type="password" name="passrepeat" placeholder="Re-type Password" required>
                   <input type="checkbox" name="promotions" value="promos">Receive promotional materials from Marlon?<br>
                   <input type="checkbox" name="recruiters" value="promos">May recruiters contact you with potential leads?<br>
                   <input type="checkbox" name="public" value="public">May we make your profile public to other users?<br>
@@ -92,9 +102,9 @@
                 <span class="section-heading-lower">Existing Users</span>
               </h2>
               <div class="form-style-5">
-                <form id="loginUser" action="/backend.js" class="test1">
+                <form id="loginUser" onsubmit="login()" class="test1">
                   <input type="text" name="email" placeholder="E-mail" required>
-                  <input type="text" name="password" placeholder="Password" required>
+                  <input type="password" name="password" placeholder="Password" required>
                   <input type="submit" name="submitButton" class="btn-primary">
                 </form>
               </div>
@@ -108,29 +118,7 @@
         </div>
       </div>
     </section>
-    <!--
-    <section class="page-section about-heading">
-      <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-xl-9 col-lg-10 mx-auto">
-              <div class="bg-faded rounded p-5">
-                <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
-                </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in
-                  <em>lust</em>
-                  with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  -->
+
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0 small">Copyright &copy; Your Website 2018</p>
@@ -142,10 +130,5 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
-
-  <!-- Script to highlight the active date in the hours list -->
-  <script>
-    $('.list-hours li').eq(new Date().getDay()).addClass('today');
-  </script>
 
 </html>
