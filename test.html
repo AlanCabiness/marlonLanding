@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuck</title>
+    <script>
+        function sendtoAPI(){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", "207.229.181.23:51718/api/student/post", false);
+            xmlHttp.send({
+                name: "hosted api",
+                email: "fuck"
+            });
+            document.getElementById('response').innerText = xmlHttp.responseText;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="sendtoAPI()">boi</button>
+<div id="response"></div>
+</body>
+</html>

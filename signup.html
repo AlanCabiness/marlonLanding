@@ -19,19 +19,44 @@
 
   <!-- Custom styles for this template -->
   <link href="css/business-casual.css" rel="stylesheet">
+  <script src="signupbackend.js"></script>
   <script src="backend.js"></script>
 </head>
 
 <body>
-<div id="loggedinNav">
-  <nav class="navbar navbar-expand-sm navbar-dark py-lg-4" id="lognav">
 
+<div id="loggedinNav" style="display: none;">
+  <nav class="navbar navbar-expand-sm navbar-dark" id="lognav">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="loggednavbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="jobs.html">Find Jobs
+            </a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" id="welcome"></a>
+            <script type="text/javascript">var name = localStorage.loggedUser; document.getElementById('welcome').innerText= "Welcome, "+name</script>
+          </li>
+          <li class="nav-item px-lg-4">
+            <button class='btn-primary' onclick="logout()">Log Out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </div>
-
+<script>
+  if (localStorage.session=="loggedin"){
+      document.getElementById('loggedinNav').style.display = "block";
+  }
+</script>
 <h1 class="site-heading text-center text-white d-none d-lg-block">
   <span class="site-heading-upper text-primary mb-3">Your new job is seconds away</span>
-  <span class="site-heading-lower">Marlon</span>
+  <span class="site-heading-lower"><a href="index.html" style="text-decoration: none; color: inherit;">Marlon</a></span>
 </h1>
 
 <!-- Navigation -->
@@ -121,7 +146,7 @@
 
     <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 small">Copyright &copy; Marlon 2018</p>
       </div>
     </footer>
 

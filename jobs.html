@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Marlon</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.css" rel="stylesheet">
+    <script>if (localStorage.session != "loggedin"){
+        window.location.replace("/marlonLanding/signup.html");
+    }</script>
+    <script src="backend.js"></script>
+    <script src="jobsbackend.js"></script>
+</head>
+
+<body>
+
+<div id="loggedinNav" style="display: none;">
+    <nav class="navbar navbar-expand-sm navbar-dark" id="lognav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="loggednavbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="jobs.html">Find Jobs
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" id="welcome"></a>
+                        <script type="text/javascript">var name = localStorage.loggedUser; document.getElementById('welcome').innerText= "Welcome, "+name</script>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <button class='btn-primary' onclick="logout()">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<script>
+    if (localStorage.session=="loggedin"){
+        document.getElementById('loggedinNav').style.display = "block";
+    }
+</script>
+<h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-upper text-primary mb-3">Your new job is seconds away</span>
+    <span class="site-heading-lower"><a href="index.html" style="text-decoration: none; color: inherit;">Marlon</a></span>
+</h1>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Marlon</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="signup.html">Sign Up/In</a>
+                </li>
+                <li class="nav-item active px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="forEmployers.html">For Employers</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<input type="search">
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-x1-5 mx-auto">
+                <input type="text" id="keysearch" placeholder="Job Keywords, Titles, etc.">
+            </div>
+            <div class="col-xl-5 mx-auto">
+                <input type="text" id="locationsearch" placeholder="City or State"> <button
+            </div>
+                <!--<div class="cta-inner">
+                    <div class="form-style-5">
+                        <form class="test1">
+                            <input type="text" name="companyID" placeholder="Company ID" required><input type="submit" value="Login" name="submitButton" class="btn-primary">
+                        </form>
+                    </div>-->
+        </div>
+    </div>
+</section>
+
+
+<section class="page-section">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Mathematically</span>
+                        <span class="section-heading-lower">The best</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/employer.jpg" alt="">
+            <div class="product-item-description d-flex mr-auto">
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">We take pride in our work, and it shows. We want you to succeed and have a strong workforce behind you at all times. With a 92% satisfaction rate, our algorithm has been strategically finding you the best candidates since 2018. In fact, we believe in our results so strongly, we will not take a finder's fee until your Marlon employee has proven themselves for six months. That's the loyalty we offer you. If you'd like more info please give us some information below and we'll let you know how Marlon can work for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<section class="page-section about-heading">
+    <div class="container">
+        <!--<img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">-->
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Ready to get started?</span>
+                            <span class="section-heading-lower">Request more info</span>
+                        </h2>
+                        <div class="cta-inner ">
+                            <div class="form-style-5 form-style-5light">
+                                <form id="infoCompany" action="/signupbackend.js" class="test1">
+                                    <input type="text" id="cName" placeholder="Company Name" required>
+                                    <input type="text" name="cPhone" placeholder="Phone 1+(xxx)xxx-xxxx" required>
+                                    <input type="text" name="cEmail" placeholder="E-mail" required>
+                                    <input type="text" name="referral" placeholder="How did you hear about Marlon?" required>
+                                    <!--<input type="checkbox" name="promotions" value="promos">Receive promotional materials from Marlon?<br>
+                                    <input type="checkbox" name="recruiters" value="promos">May recruiters contact you with potential leads?<br>
+                                    <input type="checkbox" name="public" value="public">May we make your profile public to other users?<br>
+                                    <input type="checkbox" name="terms" value="terms" required>Do you accept our terms and conditions?<br><br>-->
+                                    <input type="submit" name="submitButton" class="btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer text-faded text-center py-5">
+    <div class="container">
+        <p class="m-0 small">Copyright &copy; Marlon 2018</p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
