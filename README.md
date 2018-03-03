@@ -1,4 +1,3 @@
-# marlonLanding
 <h1>Marlon, Your New Job is Seconds Away</h1>
 Website where users can upload their resumes, apply to certain jobs, and based on parsing of the resumes,
 recruiters will be given top results for their positions. Front end by Alan Cabiness. Back-end C# API 
