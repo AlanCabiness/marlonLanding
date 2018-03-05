@@ -26,7 +26,7 @@ function login(){
     //console.log(data.name);
     //alert(data.name);
     if (password == data.password){
-        localStorage.session = "loggedin"
+        localStorage.session = "loggedin";
         localStorage.loggedUser = data.name;
     }
     else{

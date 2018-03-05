@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Marlon</title>
+    <title>Jobs</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     }</script>
     <script src="backend.js"></script>
     <script src="jobsbackend.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
 </head>
 
 <body>
@@ -89,15 +90,16 @@
         </div>
     </div>
 </nav>
-<input type="search">
+
+
 <section class="page-section cta">
     <div class="container">
         <div class="row">
             <div class="col-x1-5 mx-auto">
-                <input type="text" id="keysearch" placeholder="Job Keywords, Titles, etc.">
+                <input type="text" id="keysearch" class="searchbar" placeholder="Job Keywords, Titles, etc." onkeyup="filterKey()">
             </div>
             <div class="col-xl-5 mx-auto">
-                <input type="text" id="locationsearch" placeholder="City or State"> <button
+                <input type="text" id="locationsearch" class="searchbar" placeholder="City or State">
             </div>
                 <!--<div class="cta-inner">
                     <div class="form-style-5">
@@ -109,6 +111,17 @@
     </div>
 </section>
 
+<div id="allJobs">
+    <table id="jobsTable">
+        <tr class="header">
+            <th>Job Name</th>
+            <th>Job Description</th>
+            <th>Keywords</th>
+            <th>Apply</th>
+        </tr>
+    </table>
+</div>
+<script>getjobs()</script>
 
 <section class="page-section">
     <div class="container">
