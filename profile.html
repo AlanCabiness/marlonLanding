@@ -21,6 +21,7 @@
     <link href="css/business-casual.css" rel="stylesheet">
     <script src="backend.js"></script>
     <script src="profilebackend.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
 </head>
 
 <body>
@@ -98,9 +99,8 @@
                             <span class="section-heading-upper">Get Started Getting Noticed</span>
                             <span class="section-heading-lower">Upload your resume</span>
                         </h2>
-                        <form enctype="multipart/form-data" onsubmit="sendResume()" method="post" id="fileUpload">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-                            Choose a file to upload: <input name="uploadedFile" type="file"><br>
+                        <form onsubmit="sendResume()"  id="fileUpload">
+                            Choose a file to upload: <input name="uploadedFile" type="file" required><br>
                             <input type="submit" value="Upload File">
                         </form>
                         <p>Simply upload your resume and select the <a href=jobs.html>jobs </a>you'd like to be considered for, and our algorithm will show employers that you are the best fit for their open position. </p>
