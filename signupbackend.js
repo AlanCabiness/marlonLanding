@@ -11,7 +11,6 @@ function createUser(){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "http://localhost:51718/api/student/post", false );
     xmlHttp.send(data);
-    alert(xmlHttp.responseText)
 }
 
 function login(){

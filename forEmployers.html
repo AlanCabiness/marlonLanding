@@ -20,6 +20,7 @@
   <!-- Custom styles for this template -->
   <link href="css/business-casual.css" rel="stylesheet">
   <script src="backend.js"></script>
+  <script src="employersbackend.js"></script>
 </head>
 
 <body>
@@ -136,20 +137,22 @@
           <div class="col-xl-9 col-lg-10 mx-auto">
             <div class="bg-faded rounded p-5">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Ready to get started?</span>
-                <span class="section-heading-lower">Request more info</span>
+                <span class="section-heading-upper">Register here</span>
+                <span class="section-heading-lower">Employers</span>
               </h2>
               <div class="cta-inner ">
                 <div class="form-style-5 form-style-5light">
-                  <form id="infoCompany" action="/signupbackend.js" class="test1">
-                    <input type="text" id="cName" placeholder="Company Name" required>
-                    <input type="text" name="cPhone" placeholder="Phone 1+(xxx)xxx-xxxx" required>
-                    <input type="text" name="cEmail" placeholder="E-mail" required>
-                    <input type="text" name="referral" placeholder="How did you hear about Marlon?" required>
-                    <!--<input type="checkbox" name="promotions" value="promos">Receive promotional materials from Marlon?<br>
-                    <input type="checkbox" name="recruiters" value="promos">May recruiters contact you with potential leads?<br>
-                    <input type="checkbox" name="public" value="public">May we make your profile public to other users?<br>
-                    <input type="checkbox" name="terms" value="terms" required>Do you accept our terms and conditions?<br><br>-->
+                  <form id="newUser" onsubmit="createUser()" class="test1">
+                    <input type="text" name="name" placeholder="Your Company" required>
+                    <input type="text" name="phone" placeholder="Phone 1+(xxx)xxx-xxxx" required>
+                    <script type="text/javascript">
+                        document.getElementById('newUser').phone.addEventListener('input', function (e) {
+                            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+                        });
+                    </script>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="password" name="password" placeholder="Create a password" required>
                     <input type="submit" name="submitButton" class="btn-primary">
                   </form>
                 </div>
