@@ -97,8 +97,10 @@
         <div class="col-xl-6 mx-auto">
           <div class="cta-inner">
             <div class="form-style-5">
-              <form class="test1">
-                <input type="text" name="companyID" placeholder="Company ID" required><input type="submit" value="Login" name="submitButton" class="btn-primary">
+              <form class="test1" id="loginUser" onsubmit="login()">
+                <input type="text" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login" name="submitButton" class="btn-primary">
               </form>
             </div>
           </div>

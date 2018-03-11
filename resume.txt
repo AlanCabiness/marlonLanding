@@ -1,10 +1,6 @@
-Alan Cabiness
-DePaul Univeristy
-SOftware engineering
-mongodb
+alan cabiness
+depaul
+university
 java
-javascript
-html
-css
-python
-sdfkjsdkfljsdfkl sf sdf sdfsdsdfsd df dsf sd sd sd fsdfsdsd f sdfsdf s dfsdf  sdfsdf
+c++
+etc

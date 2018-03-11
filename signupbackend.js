@@ -8,6 +8,7 @@ function createUser(){
     data.append('PhoneNumber', document.getElementById('newUser').phone.value);
     data.append('Email', document.getElementById('newUser').email.value);
     data.append('Password', document.getElementById('newUser').password.value);
+    data.append('UserType', 'candidate');
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "http://localhost:51718/api/student/post", false );
     xmlHttp.send(data);
@@ -24,9 +25,11 @@ function login(){
     var data =  JSON.parse(xmlHttp.responseText);
     //console.log(data.name);
     //alert(data.name);
-    if (password == data.password){
+    if (password == data.password && data.userType == 'candidate'){
         localStorage.session = "loggedin";
         localStorage.loggedUser = data.name;
+        localStorage.userType = data.userType;
+        localStorage.email = data.email;
     }
     else{
         alert("incorrect username or password, please try again");
