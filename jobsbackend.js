@@ -36,10 +36,10 @@ function apply(butid, jobName){
     //tdid = document.getElementById('butid').parentNode.id;
     document.getElementById(butid).innerHTML="<img src='img/check.gif' width='60' height='60'>";
     var data = new FormData();
-    data.append('userName', localStorage.loggedUser);
-    data.append('jobName', jobName);
+    //data.append('userName', localStorage.loggedUser);
+    data.append('JobTitle', jobName);
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "POST", "http://localhost:51718/api/student/score", false );
+    xmlHttp.open( "PUT", ("http://localhost:51718/api/Posting/"+localStorage.email), false );
     xmlHttp.send(data);
 }
 

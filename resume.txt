@@ -1,6 +1,14 @@
-alan cabiness
-depaul
-university
-java
-c++
-etc
+Class Demo
+CSC 394
+Application
+Development
+Java
+C++
+C#
+MongoDB
+Javascript 
+HTML
+CSS
+I was an intern at suchandusch comapny and worked on a website using AWS
+I went to school at DePaul University where I recieved a Bachelor in Science in Computer Science
+Enginering

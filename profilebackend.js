@@ -23,7 +23,7 @@ function createJob(){
     data.append('Location', document.getElementById('newJob').location.value);
     data.append('Description', document.getElementById('newJob').description.value);
     var keys = document.getElementById('newJob').keywords.value;
-    keys = keys.replace('\n', " ");
+    keys = keys.replace(/\n/g, " ");
     keys = keys.split(" ");
     for (var i = 0; i < keys.length; i++) {
         data.append('Keywords[]', keys[i]);

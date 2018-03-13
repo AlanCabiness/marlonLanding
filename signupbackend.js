@@ -4,14 +4,26 @@
 });*/
 function createUser(){
     var data = new FormData();
-    data.append('name', document.getElementById('newUser').name.value);
-    data.append('PhoneNumber', document.getElementById('newUser').phone.value);
-    data.append('Email', document.getElementById('newUser').email.value);
-    data.append('Password', document.getElementById('newUser').password.value);
-    data.append('UserType', 'candidate');
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "POST", "http://localhost:51718/api/student/post", false );
-    xmlHttp.send(data);
+    var email = document.getElementById('newUser').email.value;
+    var duplicate = new XMLHttpRequest();
+    duplicate.open( "GET", "http://localhost:51718/api/student/"+email, false );
+    duplicate.send(null);
+    var dupeobj = JSON.parse(duplicate.responseText);
+    if (dupeobj.email == "null"){
+        data.append('name', document.getElementById('newUser').name.value);
+        data.append('PhoneNumber', document.getElementById('newUser').phone.value);
+        data.append('Email', document.getElementById('newUser').email.value);
+        data.append('Password', document.getElementById('newUser').password.value);
+        data.append('UserType', 'candidate');
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "POST", "http://localhost:51718/api/student/post", false );
+        xmlHttp.send(data);
+
+    }
+    else{
+        alert("User with that email already exists");
+    }
+
 }
 
 function login(){
