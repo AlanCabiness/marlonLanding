@@ -6,7 +6,18 @@ function getjobs(){
     for (var i=0; i<response.length;i++){
         var data = response[i];
         var element = document.getElementById('jobsTable');
-        element.innerHTML+="<tr id='row'><td>"+data.jobTitle+"</td><td>"+data.company+"</td><td>"+data.description+"</td><td>"+data.location+"</td><td id='buttonRow'><button class='applybutton' onclick='apply(this.parentNode.id, document.getElementById(this.parentNode.id).parentNode.children[0].innerText)' id='tempID'>"+"Apply"+"</button></td></tr>";
+        var isApplied = false
+        for (var c = 0; c<data.userAndScore.length;c++){
+            if (data.userAndScore[c][0] == localStorage.email){
+                isApplied = true;
+            }
+        }
+        if (isApplied == false) {
+            element.innerHTML += "<tr id='row'><td>" + data.jobTitle + "</td><td>" + data.company + "</td><td>" + data.description + "</td><td>" + data.location + "</td><td id='buttonRow'><button class='applybutton' onclick='apply(this.parentNode.id, document.getElementById(this.parentNode.id).parentNode.children[0].innerText)' id='tempID'>" + "Apply" + "</button></td></tr>";
+        }
+        else{
+            element.innerHTML += "<tr id='row'><td>" + data.jobTitle + "</td><td>" + data.company + "</td><td>" + data.description + "</td><td>" + data.location + "</td><td id='buttonRow'><img src='img/check.gif' width='60' height='60'></td></tr>";
+        }
         //${id:"applyButton"+i}.appendTo("body");
         $('#row').prop("id", ("row"+i));
         $('#tempID').prop("id", ("applyButton"+i));
@@ -123,7 +134,7 @@ function companyFilterKey(){
 
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("myTable");
+    table = document.getElementById("bestFitTable");
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
@@ -138,10 +149,10 @@ function sortTable() {
             shouldSwitch = false;
             /* Get the two elements you want to compare,
             one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("TD")[0];
-            y = rows[i + 1].getElementsByTagName("TD")[0];
+            x = rows[i].getElementsByTagName("TD")[3];
+            y = rows[i + 1].getElementsByTagName("TD")[3];
             // Check if the two rows should switch place:
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                 // I so, mark as a switch and break the loop:
                 shouldSwitch= true;
                 break;
